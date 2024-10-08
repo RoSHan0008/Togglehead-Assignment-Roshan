@@ -2,8 +2,8 @@ body {
   font-family: "Poppins", sans-serif;
 }
 .App-header {
-  width: 1300px; 
-  margin: 0 auto; 
+  width: 1300px;
+  margin: 0 auto;
 }
 
 * {
@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0b3a63; 
+  background-color: #0b3a63;
   padding: 15px 25px;
 }
 
@@ -64,8 +64,6 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
-
-
 
 .top-section {
   display: flex;
@@ -153,7 +151,6 @@ body {
   color: #666;
 }
 
-
 .cards-container {
   display: flex;
   overflow-x: scroll;
@@ -176,40 +173,46 @@ body {
 }
 
 .card h3 {
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 20px;
 }
-
+.card div {
+  display: flex;
+  align-items: center;
+}
 
 .subscribe-footer-section {
   padding: 50px 20px;
 }
 
 .subscribe-section {
-  text-align: center;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .subscribe-section h2 {
-  font-size: 32px;
-  color: #1b3e72; 
+  font-size: 20px;
+  color: #1b3e72;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
 .subscribe-section p {
-  font-size: 18px;
+  font-size: 12px;
   color: #333;
   margin-bottom: 30px;
 }
 
 .subscribe-input {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -223,7 +226,7 @@ body {
 }
 
 .subscribe-btn {
-  background-color: #1b3e72; 
+  background-color: #1b3e72;
   color: white;
   padding: 15px 30px;
   border: none;
@@ -264,7 +267,6 @@ body {
   margin-bottom: 10px;
 }
 
-
 .social-icons {
   display: flex;
   justify-content: flex-start;
@@ -286,4 +288,77 @@ body {
 .footer-bottom p {
   font-size: 14px;
   color: #ddd;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+  background-color: #f9fafc;
+}
+
+.stats-card {
+  text-align: center;
+  width: 20%;
+}
+
+.stats-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.stats-card h1 {
+  font-size: 48px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.stats-card p {
+  font-size: 16px;
+  color: #777777;
+}
+
+.faq-section {
+  margin-top: 50px;
+  padding: 20px;
+  border-top: 1px solid #d8d8d8;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  margin: 20px 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 15px;
+  font-size: 16px;
+  color: #555555;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-item:not(.open) .faq-answer {
+  display: none;
+}
+
+.faq-item .icon {
+  font-size: 24px;
 }

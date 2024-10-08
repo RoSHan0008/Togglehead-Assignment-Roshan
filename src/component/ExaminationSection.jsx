@@ -1,5 +1,6 @@
 import React from "react";
 import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 const ExaminationSection = () => {
   const cards = new Array(10).fill({
@@ -71,13 +72,15 @@ const ExaminationSection = () => {
         </div>
       </div>
 
-   
       <div className="cards-container">
         {cards.map((card, index) => (
           <div key={index} className="card">
-            <h3>{card.title}</h3>
+            <h3 sx>{card.title}</h3>
             <p>{card.description}</p>
-            <button className="know-more-btn">Know More</button>
+            <div>
+              <button className="know-more-btn">Know More</button>
+              <ArrowCircleRightIcon/>
+            </div>
           </div>
         ))}
       </div>
