@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const ExaminationSection = () => {
-  const cards = new Array(10).fill({
-    title: "Lorem ipsum",
+
+  const cardTitles = [
+    "Card 1: Introduction to JavaScript",
+    "Card 2: Advanced CSS Techniques",
+    "Card 3: Understanding React Hooks",
+    "Card 4: Next.js for Server-Side Rendering",
+    "Card 5: Node.js API Development",
+    "Card 6: Mastering TypeScript",
+    "Card 7: Responsive Web Design Principles",
+    "Card 8: Exploring Redux Toolkit",
+    "Card 9: Animating with CSS and JavaScript",
+    "Card 10: Building Progressive Web Apps",
+  ];
+  
+  const cards = cardTitles.map((title) => ({
+    title,
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod",
-  });
+  }));
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleCards = 4; 
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < cards.length - visibleCards) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
 
   return (
     <div className="examination-section">
@@ -72,17 +103,35 @@ const ExaminationSection = () => {
         </div>
       </div>
 
-      <div className="cards-container">
-        {cards.map((card, index) => (
-          <div key={index} className="card">
-            <h3 sx>{card.title}</h3>
-            <p>{card.description}</p>
-            <div>
-              <button className="know-more-btn">Know More</button>
-              <ArrowCircleRightIcon/>
+      <div className="cards-slider">
+        <button
+          className="slider-btn left"
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+        >
+          <ArrowBackIosIcon />
+        </button>
+
+        <div className="cards-container">
+          {cards.slice(currentIndex, currentIndex + visibleCards).map((card, index) => (
+            <div key={index} className="card">
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <div>
+                <button className="know-more-btn">Know More</button>
+                <ArrowCircleRightIcon />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <button
+          className="slider-btn right"
+          onClick={handleNext}
+          disabled={currentIndex >= cards.length - visibleCards}
+        >
+          <ArrowForwardIosIcon />
+        </button>
       </div>
     </div>
   );

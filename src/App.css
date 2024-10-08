@@ -1,10 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-.App-header {
-  width: 1300px;
-  margin: 0 auto;
-}
 
 * {
   margin: 0;
@@ -116,6 +112,7 @@ body {
 }
 .exam-date-h {
   width: 300px;
+  margin-left: 2rem;
   border-right: 1px solid #c0c0c0;
 }
 .exam-date-h h2 {
@@ -158,10 +155,6 @@ body {
   padding: 40px;
 }
 
-.cards-container::-webkit-scrollbar {
-  display: none;
-}
-
 .card {
   width: 300px;
   background-color: #1b3e72;
@@ -171,6 +164,44 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
+.cards-slider {
+  display: flex;
+  align-items: center;
+}
+
+.cards-container {
+  overflow: hidden;
+
+}
+
+.cards-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  flex: 0 0 30%; /* Adjust to fit 3 cards at a time */
+  margin: 0 0px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.slider-btn {
+  background-color: none;
+  color: #1b3e72;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.slider-btn.left {
+  margin-right: 10px;
+}
+
+.slider-btn.right {
+  margin-left: 10px;
+}
+
 
 .card h3 {
   font-size: 16px;
@@ -187,9 +218,7 @@ body {
   align-items: center;
 }
 
-.subscribe-footer-section {
-  padding: 50px 20px;
-}
+
 
 .subscribe-section {
   margin-bottom: 40px;

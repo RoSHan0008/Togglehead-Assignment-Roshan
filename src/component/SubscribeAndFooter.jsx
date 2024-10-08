@@ -3,8 +3,7 @@ import React from "react";
 const SubscribeAndFooter = () => {
   return (
     <div className="subscribe-footer-section">
-     
-      <div style={{display:"flex"}}>
+      <div style={{ display: "flex", padding: "50px 20px" }}>
         <div className="subscribe-section">
           <h2>Subscribe</h2>
           <p>
@@ -19,7 +18,6 @@ const SubscribeAndFooter = () => {
         <img src="images\Screenshot 2024-10sadsad-07 233322.png" />
       </div>
 
-    
       <div className="footer-section">
         <div className="footer-content">
           <div className="contact-info">
@@ -32,7 +30,6 @@ const SubscribeAndFooter = () => {
           <div className="follow-us">
             <h3>Follow us</h3>
             <div className="social-icons">
-          
               <a href="#">
                 <i className="fa fa-facebook"></i>
               </a>
