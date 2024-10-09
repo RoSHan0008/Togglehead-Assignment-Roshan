@@ -496,7 +496,7 @@ body {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    overflow-x: visible; /
+    overflow-x: visible; 
   }
 
   .card {
