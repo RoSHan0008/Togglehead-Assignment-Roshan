@@ -5,7 +5,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
-    // Toggle between open and close
+  
     if (openIndex === index) {
       setOpenIndex(null);
     } else {

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const ExaminationSection = () => {
-
   const cardTitles = [
     "Card 1: Introduction to JavaScript",
     "Card 2: Advanced CSS Techniques",
@@ -18,25 +17,32 @@ const ExaminationSection = () => {
     "Card 9: Animating with CSS and JavaScript",
     "Card 10: Building Progressive Web Apps",
   ];
-  
+
   const cards = cardTitles.map((title) => ({
     title,
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod",
   }));
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCards = 4; 
+  const scrollRef = useRef(null);
+  const cardWidth = 250; 
+  const visibleCards = 4;
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -cardWidth * visibleCards, 
+        behavior: "smooth",
+      });
     }
   };
 
   const handleNext = () => {
-    if (currentIndex < cards.length - visibleCards) {
-      setCurrentIndex(currentIndex + 1);
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: cardWidth * visibleCards, 
+        behavior: "smooth",
+      });
     }
   };
 
@@ -54,7 +60,7 @@ const ExaminationSection = () => {
           <button className="know-more-btn">Know More</button>
         </div>
         <div className="right-image">
-          <img src="images\image.png" alt="Banner" />
+          <img src="images/image.png" alt="Banner" />
         </div>
       </div>
 
@@ -104,17 +110,13 @@ const ExaminationSection = () => {
       </div>
 
       <div className="cards-slider">
-        <button
-          className="slider-btn left"
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-        >
+        <button className="slider-btn left" onClick={handlePrev}>
           <ArrowBackIosIcon />
         </button>
 
-        <div className="cards-container">
-          {cards.slice(currentIndex, currentIndex + visibleCards).map((card, index) => (
-            <div key={index} className="card">
+        <div className="cards-container" ref={scrollRef} style={{ display: "flex", overflowX: "hidden" }}>
+          {cards.map((card, index) => (
+            <div key={index} className="card" style={{ minWidth: cardWidth, margin: '0 10px' }}>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
               <div>
@@ -125,11 +127,7 @@ const ExaminationSection = () => {
           ))}
         </div>
 
-        <button
-          className="slider-btn right"
-          onClick={handleNext}
-          disabled={currentIndex >= cards.length - visibleCards}
-        >
+        <button className="slider-btn right" onClick={handleNext}>
           <ArrowForwardIosIcon />
         </button>
       </div>
