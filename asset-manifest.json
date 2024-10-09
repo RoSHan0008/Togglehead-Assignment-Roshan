@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Togglehead-Assignment-Roshan/static/css/main.88ebd014.css",
-    "main.js": "/Togglehead-Assignment-Roshan/static/js/main.3a4e94bc.js",
+    "main.css": "/Togglehead-Assignment-Roshan/static/css/main.0a4a26c7.css",
+    "main.js": "/Togglehead-Assignment-Roshan/static/js/main.90d98234.js",
     "index.html": "/Togglehead-Assignment-Roshan/index.html",
-    "main.88ebd014.css.map": "/Togglehead-Assignment-Roshan/static/css/main.88ebd014.css.map",
-    "main.3a4e94bc.js.map": "/Togglehead-Assignment-Roshan/static/js/main.3a4e94bc.js.map"
+    "main.0a4a26c7.css.map": "/Togglehead-Assignment-Roshan/static/css/main.0a4a26c7.css.map",
+    "main.90d98234.js.map": "/Togglehead-Assignment-Roshan/static/js/main.90d98234.js.map"
   },
   "entrypoints": [
-    "static/css/main.88ebd014.css",
-    "static/js/main.3a4e94bc.js"
+    "static/css/main.0a4a26c7.css",
+    "static/js/main.90d98234.js"
   ]
 }
